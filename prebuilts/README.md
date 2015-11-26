@@ -9,8 +9,8 @@ https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/x86/x86_64-lin
 
 Path to compiler should looks like this:
 
-***kernel-build-folder***/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.7/*
+**kernel-build-folder**/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.7/*
 
 or
 
-***kernel-build-folder***/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8/*
+**kernel-build-folder**/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.8/*

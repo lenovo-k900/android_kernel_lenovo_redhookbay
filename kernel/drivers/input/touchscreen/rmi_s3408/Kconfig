@@ -1,0 +1,34 @@
+
+config TOUCHSCREEN_SYNAPTICS_DSX_RMI4_I2C
+	tristate "Synaptics dsx i2c touchscreen"
+	depends on I2C
+	help
+	  Say Y here if you have a Synaptics DSX I2C touchscreen
+	  connected to your system.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called synaptics_ds5_rmi4_i2c.
+
+config TOUCHSCREEN_SYNAPTICS_DSX_RMI_DEV
+	tristate "Synaptics I2C touchscreen char device"
+	depends on TOUCHSCREEN_SYNAPTICS_DSX_RMI4_I2C
+	help
+	  This enables support for character device channel for Synaptics RMI
+	  touchscreens.
+
+config TOUCHSCREEN_SYNAPTICS_DSX_RMI4_F54
+	tristate "Synaptics I2C touchscreen f54"
+	depends on TOUCHSCREEN_SYNAPTICS_DSX_RMI4_I2C
+	help
+	  This enables support for function 54 for Synaptics RMI touchscreens.
+
+config TOUCHSCREEN_SYNAPTICS_DSX_RMI4_FW_UPDATE
+	tristate "Synaptics I2C touchscreen firmware update"
+	depends on TOUCHSCREEN_SYNAPTICS_DSX_RMI4_I2C
+	help
+	  This enables support for in-system firmware update for Synaptics RMI
+	  touchscreens.
+
+

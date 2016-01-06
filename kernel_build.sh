@@ -229,6 +229,8 @@ run_depmod() {
     mkdir -p "$tmp_mod_dir"
 
     find ${MODULE_DEST} -name *.ko -exec cp -f {} ${tmp_mod_dir} \;
+    cp $PRODUCT_OUT/kernel_modules/lib/modules/$VERSION_TAG/modules.order $tmp_mod_dir
+    cp $PRODUCT_OUT/kernel_modules/lib/modules/$VERSION_TAG/modules.builtin $tmp_mod_dir
     exit_on_error $? quiet
 
     /sbin/depmod -b $tmp_dir $VERSION_TAG
@@ -422,7 +424,7 @@ main() {
 		cp ramdisk.img out/target/product/ramdisk.img
 		cp boot_cmdline out/target/product/boot_cmdline
 		cp bootstub out/target/product/bootstub
-		./stitch.sh  out/target/product/boot_cmdline out/target/product/bootstub out/target/product/kernel out/target/product/ramdisk.img 0 0 out/target/product/boot.unsigned
+	./stitch.sh  out/target/product/boot_cmdline out/target/product/bootstub out/target/product/kernel out/target/product/ramdisk.img 0 0 out/target/product/boot.unsigned
         ./gen_os --input out/target/product/boot.unsigned --output out/target/product/boot.img --xml MOS_OTA.XML --platform-type MFDC0 --sign-with isu
     fi
     run_depmod
